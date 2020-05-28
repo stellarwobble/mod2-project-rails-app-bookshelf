@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get '/login' => 'sessions#new'
+  get '/login' => 'sessions#create'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
   resources :user_book_reviews
   resources :books
   resources :authors

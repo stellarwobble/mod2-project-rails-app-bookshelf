@@ -39,7 +39,8 @@ end
 
 50.times do 
     User.create!({
-        name: Faker::Name.first_name
+        name: Faker::Name.first_name,
+        password_digest: Faker::Hipster.word
     })
 end
 
