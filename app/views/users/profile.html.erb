@@ -1,0 +1,22 @@
+<h1>Hi, <%= @user.name %></h1>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <input type=submit value="logout">
+<% end %>
+
+<p><%= link_to "View authors", authors_path %></p>
+<p><%= link_to "View genres", genres_path %></p>
+<p><%= link_to "Find a book", books_path %></p>
+<p><%= link_to "See other profiles", users_path %></p>
+<p><%= link_to "Create a Review", new_user_book_review_path %></p>
+
+    <% @user.user_book_reviews.each do |u| %>
+
+        <h2><%= u.book_name %></h2>
+        <p>Author: <%= u.book.author.name %></p>
+        <p>Genre: <%= u.book.genre.name %></p>
+        <p>Review: <%= u.review %></p>
+        <p>Rating: <%= u.rating  %></p>
+        <p><%= link_to "Edit form", edit_user_book_review_path(u.id) %></p><br>
+
+    <% end %>

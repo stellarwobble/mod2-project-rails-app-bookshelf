@@ -1,17 +1,9 @@
 Rails.application.routes.draw do
   get '/login' => 'sessions#new'
-  get '/login' => 'sessions#create'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
-  resources :user_book_reviews
-  resources :books
-  resources :authors
-  resources :genres
-  resources :users
-  get '/login' => 'sessions#new'
-  get '/login' => 'sessions#create'
-  post '/login' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
+  get '/profile' => 'users#profile'
+  post '/profile' => 'users#profile'
   resources :user_book_reviews
   resources :books
   resources :authors

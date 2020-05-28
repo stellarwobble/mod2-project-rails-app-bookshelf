@@ -1,0 +1,16 @@
+<h1><%= @book.title %></h1>
+<h2>by <%= link_to @book.author.name, @books_author %></h2>
+<h3>Reviews:</h3>
+
+
+
+<% if @book.user_book_reviews.empty? %>
+    <p>No reviews</p>
+<% else %>
+    <% @book.user_book_reviews.each do |u| %>
+        <p><%= u.review %></p>
+        <p><%= u.rating %></p><br>
+    <% end %>
+<% end %>
+
+<%= link_to "Write a review", new_user_book_review_path %>

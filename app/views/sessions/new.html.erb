@@ -3,7 +3,7 @@
     <p><%= flash[:login_error] %></p>
 <% end %>
 
-<%= form_for @user, url: login_path, method: :post do |f| %>
+<%= form_for @user, url: profile_path, method: :post do |f| %>
 <p>
     <%= f.label :name %>
     <%= f.text_field :name %>

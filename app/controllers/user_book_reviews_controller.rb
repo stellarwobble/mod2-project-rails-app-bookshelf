@@ -5,32 +5,35 @@ class UserBookReviewsController < ApplicationController
     end
 
     def new
-<<<<<<< HEAD
-        @userbookreview = UserBookReview.new()
-=======
         @userbookreview = UserBookReview.new
->>>>>>> master
 
     end
 
     def create
         @userbookreview = UserBookReview.create(userbookreview_params)
-<<<<<<< HEAD
-        redirect_to user_path(@userbookreview.user_id)
-=======
-        redirect_to @userbookreview
->>>>>>> master
+        redirect_to profile_path
+    end
 
+    def edit
+        @userbookreview = UserBookReview.find(params[:id])
+    end
+
+    def update
+        @userbookreview = UserBookReview.find(params[:id])
+        @userbookreview.update(userbookreview_params)
+        redirect_to profile_path
+    end
+
+    def destroy
+        @userbookreview = UserBookReview.find(params[:id])
+        @userbookreview.destroy
+        redirect_to profile_path
     end
 
     private
 
     def userbookreview_params
-<<<<<<< HEAD
-        params.permit(:review, :rating, :user_name, :book_name)
-=======
-        params.require(:userbookreview).permit(:review, :rating, :user_id, :book_id)
->>>>>>> master
+        params.require(:user_book_review).permit(:review, :rating, :user_id, :book_id)
     end
 
 end
