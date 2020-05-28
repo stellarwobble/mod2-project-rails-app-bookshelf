@@ -16,6 +16,7 @@ class UserBookReview < ApplicationRecord
   end
 
   def book_name
+<<<<<<< HEAD
     self.book ? self.book.title : nil
   end
 
@@ -23,4 +24,8 @@ class UserBookReview < ApplicationRecord
 
 
 
+=======
+    self.book ? self.book.name : nil
+  end
+>>>>>>> master
 end
