@@ -1,1 +1,11 @@
 <h1><%= @user.name %></h1>
+
+<p><%= link_to "Create a Review", new_user_book_review_path %></p>
+
+    <% @user.user_book_reviews.each do |u| %>
+
+        <h2><%= u.book_name %></h2>
+        <p><%= u.review %></p>
+        <p><%= u.rating  %></p>
+       
+    <% end %>

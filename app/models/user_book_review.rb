@@ -16,6 +16,11 @@ class UserBookReview < ApplicationRecord
   end
 
   def book_name
-    self.book ? self.book.name : nil
+    self.book ? self.book.title : nil
   end
+
+
+
+
+
 end

@@ -1,0 +1,20 @@
+<h1>Book Review Form</h1>
+
+<div>
+
+    <%= form_for @userbookreview do |f| %>
+    
+    
+    <p><%= f.label :book %></p>
+    <p><%= f.collection_select :book, Book.all, :id, :title %></p>
+
+
+    <p><%= f.label :review %></p>
+    <p><%= f.text_area :review %></p>
+
+    <p><%= f.label :rating %></p>
+    <p><%= f.select :rating, (1..10) %></p>
+
+    <p><%= f.submit "Submit Review" %></p>
+    <% end %>
+</div>

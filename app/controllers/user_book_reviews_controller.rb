@@ -5,20 +5,20 @@ class UserBookReviewsController < ApplicationController
     end
 
     def new
-        @userbookreview = UserBookReview.new
+        @userbookreview = UserBookReview.new()
 
     end
 
     def create
         @userbookreview = UserBookReview.create(userbookreview_params)
-        redirect_to @userbookreview
+        redirect_to user_path(@userbookreview.user_id)
 
     end
 
     private
 
     def userbookreview_params
-        params.require(:userbookreview).permit(:review, :rating, :user_id, :book_id)
+        params.permit(:review, :rating, :user_name, :book_name)
     end
 
 end
