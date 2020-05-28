@@ -1,16 +1,21 @@
-<h1><%= @book.title %></h1>
-<h2>by <%= link_to @book.author.name, @books_author %></h2>
-<h3>Reviews:</h3>
+<h1 class="header"><%= @book.title %></h1>
+<h2>by <%= link_to @book.author.name, @books_author %></h2><br>
+<h3>Reviews:</h3><br>
 
 
 
 <% if @book.user_book_reviews.empty? %>
     <p>No reviews</p>
 <% else %>
+<div class="review">
     <% @book.user_book_reviews.each do |u| %>
+        <h4>Reviewed by: <%= u.user.name.capitalize %></h4>
         <p><%= u.review %></p>
-        <p><%= u.rating %></p><br>
+        <p>Rating: <%= u.rating %></p><br>
     <% end %>
+</div>
 <% end %>
 
+<div class="write_a_review">
 <%= link_to "Write a review", new_user_book_review_path %>
+</div>

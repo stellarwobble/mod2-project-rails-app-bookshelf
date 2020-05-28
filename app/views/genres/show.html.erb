@@ -1,7 +1,9 @@
-<h1><%= @genre.name %></h1>
+<h1 class="header"><%= @genre.name %></h1><br>
 
+<div class="genres_books">
 <ul>
     <% @genre.books.each do |b| %>
         <p><%= link_to b.title, b %></p>
     <% end %>
 </ul>
+</div>

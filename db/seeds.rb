@@ -19,8 +19,6 @@ User.destroy_all
     Author.create!({
         name: Faker::Book.author
     })
-
-
 end
 
 15.times do
@@ -29,7 +27,7 @@ end
     })
 end
 
-200.times do
+300.times do
     Book.create!({
         title: Faker::Book.title,
         author_id: Author.all.sample.id,
@@ -37,19 +35,18 @@ end
     })
 end
 
-50.times do 
+75.times do 
     User.create!({
         name: Faker::Name.first_name,
         password: Faker::Hipster.word
     })
 end
 
-50.times do
+150.times do
     UserBookReview.create!({
         review: Faker::Hipster.paragraph,
         rating: rand(1..10),
         user_id: User.all.sample.id,
         book_id: Book.all.sample.id
-
     })
 end

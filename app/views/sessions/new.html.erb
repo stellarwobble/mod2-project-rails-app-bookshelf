@@ -1,22 +1,21 @@
-<h1>Login</h1>
-<% if flash[:login_error] %>
-    <p><%= flash[:login_error] %></p>
-<% end %>
+<h1 class="header">Login Page</h1>
 
-<%= form_for @user, url: profile_path, method: :post do |f| %>
-<p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-</p>
+<div class="login">
+    <%= form_for @user, url: sessions_path, method: :post do |f| %>
+    <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </p>
 
-<p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-</p>
+    <p>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+    </p>
 
-<p>
-    <%= f.submit "Login" %>
-    Or <%= link_to(controller: 'users', action: 'new') {'Sign up'} %>
-</p>
+    <p>
+        <%= f.submit "Login" %>
+        Or <%= link_to(controller: 'users', action: 'new') {'Sign up'} %>
+    </p>
 
-<% end %>
+    <% end %>
+</div>

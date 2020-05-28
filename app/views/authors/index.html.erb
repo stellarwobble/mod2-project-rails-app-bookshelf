@@ -1,7 +1,9 @@
-<h1>Authors</h1>
+<h1 class="header">Authors</h1><br>
 
+<div class="author">
 <ul>
 <% @authors.each do |author| %>
     <li><%= link_to author.name, author %></li>
 <% end %>
 </ul>
+</div>

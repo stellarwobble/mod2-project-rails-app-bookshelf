@@ -1,11 +1,6 @@
-<h1><%= @user.name %></h1>
+<h1 class="header"><%= @user.name %></h1><br>
 
-<p><%= link_to "View authors", authors_path %></p>
-<p><%= link_to "View genres", genres_path %></p>
-<p><%= link_to "Find a book", books_path %></p>
-<p><%= link_to "See other profiles", users_path %></p>
-<p><%= link_to "Create a Review", new_user_book_review_path %></p>
-
+<div class="user_books">
     <% @user.user_book_reviews.each do |u| %>
 
         <h2><%= u.book_name %></h2>
@@ -15,3 +10,4 @@
         <p>Rating: <%= u.rating  %></p>
  
     <% end %>
+</div>
