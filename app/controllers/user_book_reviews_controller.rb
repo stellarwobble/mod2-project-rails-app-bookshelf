@@ -1,4 +1,5 @@
 class UserBookReviewsController < ApplicationController
+    before_action :require_logged_in
     def show
         @userbookreview = UserBookReview.find(params[:id])
 

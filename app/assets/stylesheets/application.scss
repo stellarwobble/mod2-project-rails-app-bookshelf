@@ -22,7 +22,7 @@
 
 /* Add a black background color to the top navigation */
 .navbar {
-    background-color: rgba(242, 255, 0, 0.824);
+    background-color: rgba(235, 243, 6, 0.824);
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -38,6 +38,7 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    
   }
   
   /* Change the color of links on hover */
@@ -56,11 +57,23 @@
     font-size: x-large;
     margin: 5px;
   }
+
+  .body {
+    background-image: url("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+    padding-bottom: 500px;
+  }
+
   .main {
     margin-right: 100px;
-    margin-left:50px;
+    margin-left:25px;
     margin-top: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: seashell;
+  }
+
+  .footer {
+    background-color: seashell;
   }
 
   .login p {
@@ -68,12 +81,102 @@
 
   }
 
+  .profile {
+    border-style: ridge;
+    margin: 10px;
+    padding: 5px;
+  }
+
   .profile h2 {
     font-size: large;
     font-weight: bolder;
     padding: 5px
   }
+
   .profile p{
     padding: 2px
   }
 
+  #author {
+    font-weight: bold;
+  }
+
+  #genre {
+    font-weight: bold;
+  }
+
+  #review {
+    font-weight: bold;
+  }
+  #review_text {
+    padding-left: 5px;
+  }
+  
+  #rating {
+    font-weight: bold;
+  }
+
+  #review_rating {
+    padding-left: 5px;
+  }
+
+  #edit_link {
+    border: medium;
+  }
+
+  .author li {
+    border-style: ridge;
+    padding: 5px;
+  }
+  
+  .genre li {
+    border-style: ridge;
+    padding: 5px;
+  }
+  
+  .book li {
+    border-style: ridge;
+    padding: 5px;
+  }
+  
+  .user li {
+    border-style: ridge;
+    padding: 5px;
+  }
+
+  .author_books h2 {
+    font-size: large;
+  }
+  
+  .author_books h3 {
+    font-size: medium;
+    font-weight: bold;
+  }
+
+  .genre_books p {
+    border-style: ridge;
+    padding: 5px;
+  }
+
+  .review h4{
+    font-weight: bold;
+  }
+
+  .review div{
+    border-style: ridge;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  #by {
+    margin-left: 10px;
+  }
+
+  .form {
+    border-style: ridge;
+    padding: 5px;
+  }
+
+  #time {
+    font-size: small;
+  }

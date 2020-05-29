@@ -1,13 +1,15 @@
-<h1 class="header"><%= @user.name %></h1><br>
+<h1 class="header"><%= @user.name %>'s Bookshelf</h1><br>
 
-<div class="user_books">
-    <% @user.user_book_reviews.each do |u| %>
+<% @user.user_book_reviews.each do |u| %>
+    <div class="profile">
 
-        <h2><%= u.book_name %></h2>
-        <p>Author: <%= u.book.author.name %></p>
-        <p>Genre: <%= u.book.genre.name %></p>
-        <p>Review: <%= u.review %></p>
-        <p>Rating: <%= u.rating  %></p>
+    <p id="time"><%= u.time %></p><br>
+    <h2 id="profile_book"><%= link_to u.book_name, book_path(u.book_id) %></h2>
+    <p id="author">Author: <%= link_to u.book.author.name, author_path(u.book.author_id) %></p>
+    <p id="genre">Genre: <%= link_to u.book.genre.name, genre_path(u.book.genre_id) %></p>
+    <p id="review">Review: <div id=review_text><%= u.review %></div></p>
+    <p id="rating">Rating: <div id=review_rating><%= u.rating  %></div></p>
  
-    <% end %>
 </div>
+    <% end %>
+

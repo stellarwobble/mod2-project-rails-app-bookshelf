@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     skip_before_action :require_logged_in, only: [:new, :create]
 
     def index
-        @users = User.all
+        @users = User.all.sort_by { |hash| hash[:name] }
     end
 
     def show

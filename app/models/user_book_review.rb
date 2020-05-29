@@ -18,4 +18,8 @@ class UserBookReview < ApplicationRecord
   def book_name
     self.book ? self.book.title : nil
   end
+
+  def time
+    self.created_at.to_formatted_s(:long) 
+  end
 end

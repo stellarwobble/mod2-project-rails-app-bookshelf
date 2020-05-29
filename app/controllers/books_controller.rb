@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
     def index
-        @books = Book.all
+        @books = Book.all.sort_by { |hash| hash[:title] }
     end
 
     def show

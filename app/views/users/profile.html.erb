@@ -1,15 +1,19 @@
 <h1 class="header">Hi, <%= @user.name.capitalize %></h1>
-<h2 id="logout"><%= link_to "Logout", logout_path %></h2><br>
-
-<div class="profile">
-    <% @user.user_book_reviews.each do |u| %>
-
-        <h2 id="profile_book"><%= link_to u.book_name, book_path(u.book_id) %></h2>
-        <p>Author: <%= link_to u.book.author.name, author_path(u.book.author_id) %></p>
-        <p>Genre: <%= link_to u.book.genre.name, genre_path(u.book.genre_id) %></p>
-        <p>Review: <%= u.review %></p>
-        <p>Rating: <%= u.rating  %></p>
-        <p><%= link_to "Edit form", edit_user_book_review_path(u.id) %></p><br>
-
-    <% end %>
+<h2 id="by"><%= button_to "Logout", logout_path, method: :get %> </h2><br>
+<div id="by">
+    <%= button_to "Write a review", new_user_book_review_path, method: :get %>
 </div>
+
+<% @user.user_book_reviews.each do |u| %>
+<div class="profile">
+    
+    <p id="time"><%= u.time %></p><br>
+    <h2 id="profile_book"><%= link_to u.book_name, book_path(u.book_id) %></h2>
+    <p id="author">Author: <%= link_to u.book.author.name, author_path(u.book.author_id) %></p>
+    <p id="genre">Genre: <%= link_to u.book.genre.name, genre_path(u.book.genre_id) %></p>
+    <p id="review">Review: <div id=review_text><%= u.review %></div></p>
+    <p id="rating">Rating: <div id=review_rating><%= u.rating  %></div></p>
+    <p id="edit_link"><%= button_to "Edit form", edit_user_book_review_path(u.id), method: :get %></p><br>
+    
+</div>
+<% end %>

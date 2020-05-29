@@ -1,9 +1,10 @@
 <h1 class="header"><%= @author.name %></h1><br>
 
-<div class="authors_books">
+<div class="author_books">
 <h2>Books:</h2><br>
+
 <% @author.books.each do |b| %>
     <h3><%= link_to b.title, b %></h3>
-    <h4><%= b.genre.name %></h4><br>
+    <h4>Genre: <%= link_to b.genre.name, b.genre %></h4><br>
 <% end %>
 </div>

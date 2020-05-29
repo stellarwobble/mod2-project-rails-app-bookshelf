@@ -1,21 +1,24 @@
 <h1 class="header"><%= @book.title %></h1>
-<h2>by <%= link_to @book.author.name, @books_author %></h2><br>
-<h3>Reviews:</h3><br>
+<h2 id="by">by <%= link_to @book.author.name, @books_author %></h2><br>
 
+<div id="by">
+    <%= button_to "Write a review", new_user_book_review_path, method: :get %>
+    </div><br>
 
+<h3>Reviews:</h3>
 
 <% if @book.user_book_reviews.empty? %>
-    <p>No reviews</p>
+    <p>There's nothing here, be the first to review!</p>
 <% else %>
 <div class="review">
     <% @book.user_book_reviews.each do |u| %>
-        <h4>Reviewed by: <%= u.user.name.capitalize %></h4>
+    <div>
+        <p id="time"><%= u.time %></p><br>
+        <h4>Reviewed by: <%= link_to u.user.name.capitalize, u.user %></h4>
         <p><%= u.review %></p>
-        <p>Rating: <%= u.rating %></p><br>
+        <p id="rating">Rating: <%= u.rating %></p><br>
+    </div>
     <% end %>
 </div>
 <% end %>
 
-<div class="write_a_review">
-<%= link_to "Write a review", new_user_book_review_path %>
-</div>

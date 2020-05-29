@@ -11,19 +11,22 @@
     <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/sandstone/bulmaswatch.min.css">
   </head>
 
-  
-    <div class = navbar>
-      <div><%= link_to "My Profile", profile_path %></div>
-      <div><%= link_to "Authors", authors_path %></div>
-      <div><%= link_to "Genres", genres_path %></div>
-      <div><%= link_to "Books", books_path %></div>
-      <div><%= link_to "View User Profiles", users_path %></div>
-      <div><%= link_to "Create a Review", new_user_book_review_path %></div>
-    </div>
-      
-  <main class="main">
-  
-    <%= yield %>
+  <div class = navbar>
+    <div><%= link_to "📚 My Profile", profile_path %></div>
+    <div><%= link_to "Authors", authors_path %></div>
+    <div><%= link_to "Genres", genres_path %></div>
+    <div><%= link_to "Books", books_path %></div>
+    <div><%= link_to "Bookshelves", users_path %></div>
+    <div><%= link_to "Create a Review", new_user_book_review_path %></div>
+  </div>
 
-  </main>
+  <body class="body">
+ 
+  </body>
+    <main class="main">
+  
+     <%= yield %>
+
+    </main>
+  
 </html>
