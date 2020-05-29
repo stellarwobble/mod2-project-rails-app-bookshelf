@@ -8,10 +8,10 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/flatly/bulmaswatch.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/sandstone/bulmaswatch.min.css">
   </head>
 
-  <body>
+  
     <div class = navbar>
       <div><%= link_to "My Profile", profile_path %></div>
       <div><%= link_to "Authors", authors_path %></div>
@@ -19,7 +19,11 @@
       <div><%= link_to "Books", books_path %></div>
       <div><%= link_to "View User Profiles", users_path %></div>
       <div><%= link_to "Create a Review", new_user_book_review_path %></div>
-  </div>
+    </div>
+      
+  <main class="main">
+  
     <%= yield %>
-  </body>
+
+  </main>
 </html>

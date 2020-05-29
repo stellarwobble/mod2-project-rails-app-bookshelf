@@ -22,13 +22,17 @@
 
 /* Add a black background color to the top navigation */
 .navbar {
-    background-color: #333;
+    background-color: rgba(242, 255, 0, 0.824);
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
   
   /* Style the links inside the navigation bar */
   .navbar div {
     float: left;
+    display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -47,3 +51,29 @@
     background-color: #4CAF50;
     color: white;
   }
+
+  .header {
+    font-size: x-large;
+    margin: 5px;
+  }
+  .main {
+    margin-right: 100px;
+    margin-left:50px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+
+  .login p {
+    padding: 5px;
+
+  }
+
+  .profile h2 {
+    font-size: large;
+    font-weight: bolder;
+    padding: 5px
+  }
+  .profile p{
+    padding: 2px
+  }
+
